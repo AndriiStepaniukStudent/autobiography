@@ -4,20 +4,24 @@
   <title>Моя автобіографія</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #cfe7ff; /* Голубуватий фон */
     }
     h1 {
       color: #333333;
       text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Тінь для тексту */
     }
     #bio {
       width: 60%;
       margin: 0 auto;
-      background-color: #ffffff;
+      background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
       padding: 20px;
+      border: 2px solid #cccccc;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      animation-name: example;
+      animation-duration: 4s;
     }
     img {
       display: block;
@@ -30,14 +34,66 @@
       width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
+      border: 1px solid #dddddd;
     }
     td, th {
       padding: 8px;
       border-bottom: 1px solid #dddddd;
       text-align: left;
     }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
     .highlight {
       color: #007bff;
+      text-decoration: none;
+    }
+    .highlight:hover {
+      color: #ff7f50;
+    }
+    .highlight:visited {
+      color: #666666;
+    }
+    .highlight:focus {
+      outline: 2px solid #ff7f50;
+    }
+    .highlight:active {
+      color: #ff0000;
+    }
+    @keyframes example {
+      0%   {background-color: red;}
+      25%  {background-color: yellow;}
+      50%  {background-color: blue;}
+      100% {background-color: green;}
+    }
+
+    /* Стилі для форми */
+    form {
+      margin-top: 20px;
+      border: 1px solid #dddddd;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -67,6 +123,17 @@
   </table>
   
   <p>Долучайтесь до мене на <a href="https://www.linkedin.com/in/andrii-stepaniuk-962001206/" class="highlight">LinkedIn</a> для більш детальної інформації про мої досягнення та досвід.</p>
+
+  <!-- Оновлена форма для зворотного зв'язку -->
+  <form action="/action_page.php">
+    <label for="fname">Ім'я:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Прізвище:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="message">Повідомлення:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Надіслати">
+  </form> 
 </div>
 
 </body>
